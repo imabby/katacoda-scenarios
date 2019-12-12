@@ -35,11 +35,11 @@
     "assets": {
       "host01": [
         {
-          "file": "/python/requirements.txt",
+          "file": "python/requirements.txt",
           "target": "~/"
         },
         {
-          "file": "/python/server.py",
+          "file": "python/server.py",
           "target": "~/"
         }
       ]
