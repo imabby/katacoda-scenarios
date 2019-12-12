@@ -31,6 +31,18 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "requirements.txt",
+          "target": "~/"
+        },
+        {
+          "file": "server.py",
+          "target": "~/"
+        }
+      ]
     }
   },
   "environment": {
