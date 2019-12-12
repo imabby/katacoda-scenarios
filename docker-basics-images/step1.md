@@ -1,4 +1,5 @@
-### List most recently created local images
+
+### List images
 
 Running the following command will show all local top level images, their repository and tags, and their size. Intermediate layers are not shown by default. The list is ordered by the most recently created images.
 

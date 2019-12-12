@@ -6,20 +6,24 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Listing Images",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Building an Image",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Running an Image",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Tagging an Image",
         "text": "step4.md"
+      },
+      {
+        "title": "Removing Images",
+        "text": "step5.md"
       }
     ],
     "intro": {
