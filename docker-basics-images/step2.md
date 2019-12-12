@@ -24,7 +24,8 @@ Next we will copy the files from our local machine using the `COPY` instruction.
 
 ```
 WORKDIR /usr/src/app
-COPY ./sourcecode .
+COPY ./requirements.txt .
+COPY ./server.py .
 ```
 
 #### Exposing ports
@@ -55,7 +56,8 @@ Your `Dockerfile` should now look like the following:
 ```
 FROM python:3-alpine
 WORKDIR /usr/src/app
-COPY ./sourcecode .
+COPY ./requirements.txt .
+COPY ./server.py .
 EXPOSE 8000
 RUN pip install -qr requirements.txt
 CMD ["python3", "./server.py"]
