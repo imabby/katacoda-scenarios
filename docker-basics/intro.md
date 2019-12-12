@@ -1,1 +1,0 @@
-In this scenario you will learn the basics of docker.

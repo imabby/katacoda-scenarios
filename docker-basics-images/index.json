@@ -1,6 +1,6 @@
 {
-  "title": "Docker Basics",
-  "description": "A basic overview of docker",
+  "title": "Docker Basics - Images",
+  "description": "A basic overview of images used in docker",
   "difficulty": "Beginner",
   "time": "30 minutes",
   "details": {
