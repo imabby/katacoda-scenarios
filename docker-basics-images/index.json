@@ -46,8 +46,12 @@
     }
   },
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "editor-terminal",
+    "uisettings": "javascript"
   },
+  "files": [
+      "server.py", "index.js"
+  ],
   "backend": {
     "imageid": "ubuntu"
   }
