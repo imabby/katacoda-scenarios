@@ -1,21 +1,21 @@
 {
-  "title": "Docker Basics - Images",
-  "description": "A basic overview of images used in docker",
+  "title": "Docker Basics",
+  "description": "A basic overview of docker",
   "difficulty": "Beginner",
   "time": "30 minutes",
   "details": {
     "steps": [
       {
-        "title": "Listing Images",
+        "title": "Basic Commands",
         "text": "step1.md",
         "code": "setup.sh"
       },
       {
-        "title": "Building an Image",
+        "title": "Images",
         "text": "step2.md"
       },
       {
-        "title": "Running an Image",
+        "title": "Containers",
         "text": "step3.md",
         "code": "clear.sh"
       },

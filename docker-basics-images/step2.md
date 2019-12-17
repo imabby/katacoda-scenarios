@@ -9,7 +9,7 @@ Create a new Dockerfile via the CLI: `touch Dockerfile`{{execute}}
 
 Next, open the Dockerifle in the editor: `Dockerfile`{{open}}
 
-Most Dockerfiles will usually start with a base image (for example, ubuntu, centos). You can create a base image from sctrach but with so many images available you shouldn't need to. Check out [Docker Hub](https://hub.docker.com/) to see available images.
+Most Dockerfiles will usually start with a base image (for example, ubuntu, centos). You can create a base image from scratch but with so many images available you shouldn't need to. Check out [Docker Hub](https://hub.docker.com/) to see available images.
 
 We will add a base image to our `Dockerfile` using the `FROM` instruction, followed by the image name.
 <pre class="file" data-filename="Dockerfile" data-target="append">FROM python:3-alpine
@@ -30,7 +30,7 @@ Here, the first argument is specifying the source file/path and the second argum
 
 #### Exposing ports
 
-Exposing a port in a `Dockerfile` lets Docker know which ports the container will be listening to. For example, for a web server you may want to expose port 80 or port 443. Add the following to your `Dockerfile`.
+Exposing a port in a `Dockerfile` lets Docker know which ports the container will be listening to. For example, for a web server, you may want to expose port 80 or port 443. Add the following to your `Dockerfile`.
 
 <pre class="file" data-filename="Dockerfile" data-target="append">EXPOSE 8000
 </pre>
@@ -83,9 +83,9 @@ If the command completed successfully, we should be able to see the new image wi
 
 As you can see the image was created without any information such as name or version. This can make it difficult to know which image is which. To avoid this we can use Docker tags. Docker tags are similar to GIT tags in that they allow you to alias the ID of your image.
 
-Lets rebuild our image with a new tag: `docker build -t myimage:mytag .`{{execute}} 
+Let's rebuild our image with a new tag: `docker build -t myimage:mytag .`{{execute}} 
 
-Running `docker images`{{execute}}, you should now see an image whose repository is myimage and tag is mytag.
+Running `docker images`{{execute}}, you should now see an image whose repository is myimage and the tag is mytag.
 
 If you don't specify a tag, it is given the `latest` tag by default.<br/>
 **The onus is on the developer to tag the images properly such that latest always points to the `latest` stable release of the image.**

@@ -9,7 +9,7 @@ This should print out the Docker whale ascii image.
 
 #### Running our python web app image
 
-Run `docker run myimage:mytag`{{execute}}
+Run `docker run -p 8000:8000 myimage:mytag`{{execute}}
 
 If all goes well, this should start the image in a new container and print the following:
 ```
@@ -24,6 +24,9 @@ If all goes well, this should start the image in a new container and print the f
  * Debugger PIN: 555-356-043
 ```
 
-You can view the webpage using the link below:<br>
-Render port 8500: https://[[HOST_SUBDOMAIN]]-8500-[[KATACODA_HOST]].environments.katacoda.com/
+You can now view the webpage using the link below:<br>
+Render port 8000: https://[[HOST_SUBDOMAIN]]-8000-[[KATACODA_HOST]].environments.katacoda.com/
+
+#### 
+
 
