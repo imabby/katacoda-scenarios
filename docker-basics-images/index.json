@@ -7,7 +7,8 @@
     "steps": [
       {
         "title": "Listing Images",
-        "text": "step1.md"
+        "text": "step1.md",
+        "code": "setup.sh"
       },
       {
         "title": "Building an Image",
@@ -36,11 +37,11 @@
       "host01": [
         {
           "file": "requirements.txt",
-          "target": "~/"
+          "target": "~/tutorial"
         },
         {
           "file": "server.py",
-          "target": "~/"
+          "target": "~/tutorial"
         }
       ]
     }
@@ -49,7 +50,7 @@
     "hidefinish": true,
     "uilayout": "editor-terminal",
     "uisettings": "javascript",
-    "uieditorpath": "/home/scrapbook/tutorial"
+    "uieditorpath": "/root/tutorial"
   },
   "files": [
       "Dockerfile"
