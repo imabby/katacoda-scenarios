@@ -16,7 +16,8 @@
       },
       {
         "title": "Running an Image",
-        "text": "step3.md"
+        "text": "step3.md",
+        "code": "clear.sh"
       },
       {
         "title": "Tagging an Image",

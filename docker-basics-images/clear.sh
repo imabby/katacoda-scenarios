@@ -1,0 +1,1 @@
+mkdir -p tutorial; cd tutorial/; mkdir -p assets; clear;

@@ -70,6 +70,9 @@ RUN pip install -qr requirements.txt
 CMD ["python3", "./server.py"]
 ``` 
 
+For a full explanation of all available instructions, see the following link:<br/>
+[https://docs.docker.com/engine/reference/builder/](https://docs.docker.com/engine/reference/builder/)
+
 #### Building the image
 
 Once the Dockerfile has been written we can now build the image with the docker command: `docker build .`{{execute}}
