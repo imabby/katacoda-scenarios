@@ -50,7 +50,7 @@
     "uisettings": "javascript"
   },
   "files": [
-      "server.py", "index.js"
+      "Dockerfile"
   ],
   "backend": {
     "imageid": "ubuntu"
