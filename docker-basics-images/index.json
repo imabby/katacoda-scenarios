@@ -37,11 +37,11 @@
       "host01": [
         {
           "file": "requirements.txt",
-          "target": "~/tutorial"
+          "target": "/root/tutorial/assets/"
         },
         {
           "file": "server.py",
-          "target": "~/tutorial"
+          "target": "/root/tutorial/assets/"
         }
       ]
     }
@@ -52,9 +52,6 @@
     "uisettings": "javascript",
     "uieditorpath": "/root/tutorial"
   },
-  "files": [
-      "Dockerfile"
-  ],
   "backend": {
     "imageid": "ubuntu"
   }
