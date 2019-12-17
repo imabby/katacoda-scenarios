@@ -11,12 +11,22 @@
         "code": "setup.sh"
       },
       {
-        "title": "Images",
-        "text": "step2.md"
+        "title": "Images Overview",
+        "text": "step2a.md",
+        "code": "clear.sh"
       },
       {
-        "title": "Containers",
-        "text": "step3.md",
+        "title": "Creating Images",
+        "text": "step2b.md"
+      },
+      {
+        "title": "Containers Overview",
+        "text": "step3a.md",
+        "code": "clear.sh"
+      },
+      {
+        "title": "Running Containers",
+        "text": "step3b.md",
         "code": "clear.sh"
       },
       {
