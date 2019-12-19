@@ -68,7 +68,7 @@ services:
 ```
 services:
  mycomposer:
-  volumes
+ volumes1
 
 ```
 
