@@ -64,7 +64,7 @@ services:
  - /path/on/host
 ```
 
-* A named volume is similar to an anonymous volume. Docker manages where on disk the volume is created, but you give it a volume name. To create a named volume:
+* A named volume is similar to an anonymous volume. Docker manages where on disk the volume is created, but you give it a volume name. To create a named volume:<br/>
 ```
 services:
  mycomposer:
@@ -129,7 +129,7 @@ services:
  mycomposer:
  image: myimage:mytag
  environment:
- MYENV1: Hellow
+ MYENV1: Hello
  MYENV2: "${USER}"
 ```
 
