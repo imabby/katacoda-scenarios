@@ -68,8 +68,8 @@ services:
 ```
 services:
  mycomposer:
-  volumes: 
-   - /path/on/host
+ volumes: 
+ - /path/on/host
    
 ```
 
