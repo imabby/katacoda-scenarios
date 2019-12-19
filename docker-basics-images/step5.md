@@ -70,9 +70,7 @@ services:
  mycomposer:
   volumes: 
    - /path/on/host
-
-volumes:
- somevolume:
+   
 ```
 
 Anonymous volumes are rarely used nowadays, named volumes are the recommended way to go. However, host volumes also allow us to specify an existing folder in the host. We can also mount volumes in read-only mode by appending `:ro` to the rule.
