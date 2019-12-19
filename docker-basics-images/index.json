@@ -30,12 +30,19 @@
         "code": "clear.sh"
       },
       {
-        "title": "Tagging an Image",
-        "text": "step4.md"
+        "title": "Viewing Container Information",
+        "text": "step4.md",
+        "code": "clear.sh"
       },
       {
-        "title": "Removing Images",
-        "text": "step5.md"
+        "title": "Docker Compose Overview",
+        "text": "step5.md",
+        "code": "clear.sh"
+      },
+      {
+        "title": "Docker Compose",
+        "text": "step6.md",
+        "code": "clear.sh"
       }
     ],
     "intro": {

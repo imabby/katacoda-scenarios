@@ -37,7 +37,7 @@ Running `docker ps -a`{{execute}}, we can see the myimage container is still in 
 
 To restart the container we use the `docker start` command. This time instead of specifying the image name we specify the container name that we assigned.
 
-`docker start myconatiner`{{execute}}
+`docker start mycontainer`{{execute}}
 
 This will restart the container but detached from the terminal. Adding the `--attach` flag will force docker to attach the container to the terminal the same as when we ran the `docker run` command.
 
@@ -52,3 +52,13 @@ Running `docker ps`{{execute}} will show that our container is running and is bi
 Once we have finished with our container we need to stop it.
 
 Using `docker stop mycontainer`{{execute}}, will stop the container but again not remove it. This allows us to start the container again if needed.
+
+Run `docker ps -a`{{execute}} to view stopped containers.
+
+#### Removing a stopped container 
+
+Use `docker rm mycontainer`{{execute}}, to remove our stopped container.
+
+If the docker container is still runnning you will need to force the removal using: `docker rm --force mycontainer`
+
+To remove all stopped containers: `docker rm $(docker ps -a -q)`. The command docker ps -a -q will return all existing container IDs and pass them to the rm command which will delete them. Any running containers will not be deleted.
