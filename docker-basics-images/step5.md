@@ -13,12 +13,12 @@ A docker-compose.yml file looks like this:
 ```
 version: '3'
 services:
- myservice
- image:myimage:mytag
- ports:
- ...
- volumes:
- ...
+  myservice
+    image:myimage:mytag
+    ports:
+      ...
+    volumes:
+      ...
 ```
 
 #### Version
@@ -38,8 +38,8 @@ For example, for our Python web app we would only have the one service in the co
 ```
 version: "3"
 services:
- myservice:
- ...
+  myservice:
+    ...
 ```
 
 #### Volumes
@@ -51,17 +51,17 @@ There are three types of volumes: anonymous, named, and host ones. Docker manage
 * A host volume lives on the Docker host's filesystem and can be accessed from within the container. To create a host volume:
 ```
 services: 
- mycomposer:
- volumes: 
- - /path/on/host:/path/in/container
+  mycomposer:
+    volumes: 
+      - /path/on/host:/path/in/container
 ```
 
 * An anonymous volume is useful for when you would rather have Docker handle where the files are stored. It can be difficult, however, to refer to the same volume over time when it is an anonymous volume. To create an anonymous volume:
 ```
 services: 
  mycomposer:
- volumes: 
- - /path/on/host
+   volumes: 
+     - /path/on/host
 ```
 
 * A named volume is similar to an anonymous volume. Docker manages where on disk the volume is created, but you give it a volume name. To create a named volume.
@@ -74,15 +74,15 @@ If we have a Dockerfile, we can build the image first before running the contain
 We can do this using the build keyword:
 ```
 services: 
- mycomposer:
- build: /path/to/dockerfile/
+  mycomposer:
+    build: /path/to/dockerfile/
 ```
 
 You can also specify an URL if needed.:
 ```
 services: 
- mycomposer:
- build: https://github.com/my-company/my-project.git
+  mycomposer:
+    build: https://github.com/my-company/my-project.git
 ```
 
 #### Exposing Ports
@@ -91,10 +91,10 @@ Similar to using the `-p 8000:8000` flag in the `docker run` command. We can use
 ```
 version: '3'
 services:
- mycomposer:
- image: myimage:mytag
- ports:
- - 8000:8000
+  mycomposer:
+    image: myimage:mytag
+    ports:
+      - 8000:8000
 ```
 
 #### Dependencies
@@ -103,10 +103,10 @@ Often, we need to create a dependency chain between our services, so that some s
 ```
 version: '3'
 services:
- mycomposer:
- image: myimage:mytag
- depends_on:
- - myothercontainer
+  mycomposer:
+    image: myimage:mytag
+    depends_on:
+      - myothercontainer
 ```
 
 We should be aware, however, that Compose will not wait for the myothercontainer service to finish loading before starting the mycomposer service: it will simply wait for it to start. We will cover this in a later scenario.
@@ -117,11 +117,11 @@ Working with environment variables is easy with Docker Compose. We can define st
 ```
 version: '3'
 services:
- mycomposer:
- image: myimage:mytag
- environment:
- MYENV1: Hello
- MYENV2: "${USER}"
+  mycomposer:
+    image: myimage:mytag
+    environment:
+      MYENV1: Hello
+      MYENV2: "${USER}"
 ```
 
 There are different methods to provide those values to Compose.
