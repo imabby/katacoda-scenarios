@@ -1,6 +1,6 @@
 Docker Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration. 
 
-Using Compose is basically a three-step process:
+Using Compose is a three-step process:
 * Define your app’s environment with a Dockerfile so it can be reproduced anywhere.
 * Define the services that make up your app in docker-compose.yml so they can be run together in an isolated environment.
 * Run `docker-compose up` and Compose starts and runs your entire app.
@@ -9,16 +9,16 @@ In short, Docker Compose works by applying many rules declared within a single d
 Almost every rule replaces a specific Docker command so that in the end we just need to run:
 `docker-compose up`
 
-A docker-compose.yml looks like this:
+A docker-compose.yml file looks like this:
 ```
 version: '3'
 services:
-  myservice
-    image:myimage:mytag
-    ports:
-      ...
-    volumes:
-      ...
+ myservice
+ image:myimage:mytag
+ ports:
+ ...
+ volumes:
+ ...
 ```
 
 #### Version
@@ -38,8 +38,8 @@ For example, for our Python web app we would only have the one service in the co
 ```
 version: "3"
 services:
-  myservice:
-    ...
+ myservice:
+ ...
 ```
 
 #### Volumes
@@ -51,48 +51,47 @@ There are three types of volumes: anonymous, named, and host ones. Docker manage
 * A host volume lives on the Docker host's filesystem and can be accessed from within the container. To create a host volume:
 ```
 services: 
-  mycomposer:
-    volumes: 
-      - /path/on/host:/path/in/container
+ mycomposer:
+ volumes: 
+ - /path/on/host:/path/in/container
 ```
 
-* An anonymous volume is useful for when you would rather have Docker handle where the files are stored. It can be difficult, however, to refer to the same volume over time when it is an anonymous volumes. To create an anonymous volume:
+* An anonymous volume is useful for when you would rather have Docker handle where the files are stored. It can be difficult, however, to refer to the same volume over time when it is an anonymous volume. To create an anonymous volume:
 ```
 services: 
-  mycomposer:
-    volumes: 
-      - /path/on/host
+ mycomposer:
+ volumes: 
+ - /path/on/host
 ```
 
 * A named volume is similar to an anonymous volume. Docker manages where on disk the volume is created, but you give it a volume name. To create a named volume:
-
 ```
 services:
-  mycomposer:
-    volumes:
-      - somevolumename:/path/on/host
+ mycomposer:
+ volumes:
+ - somevolumename:/path/on/host
 
 volumes:
-  somevolumename: 
+ somevolumename: 
 ```
 
-Anonymous volumes are rarely used nowadays, named volumes are the recommneded way to go. However, host volumes also allow us to specify an existing folder in the host. We can also mount volumes in read-only mode by appending :ro to the rule.
+Anonymous volumes are rarely used nowadays, named volumes are the recommended way to go. However, host volumes also allow us to specify an existing folder in the host. We can also mount volumes in read-only mode by appending `:ro` to the rule.
 
 #### Building an Image
 
-If we have a Dockerfile, we can build the image first before runing the container.
+If we have a Dockerfile, we can build the image first before running the container.
 We can do this using the build keyword:
 ```
 services: 
-  mycomposer:
-    build: /path/to/dockerfile/
+ mycomposer:
+ build: /path/to/dockerfile/
 ```
 
 You can also specify an URL if needed.:
 ```
 services: 
-  mycomposer:
-    build: https://github.com/my-company/my-project.git
+ mycomposer:
+ build: https://github.com/my-company/my-project.git
 ```
 
 #### Exposing Ports
@@ -101,52 +100,55 @@ Similar to using the `-p 8000:8000` flag in the `docker run` command. We can use
 ```
 version: '3'
 services:
-  mycomposer:
-    image: myimage:mytag
-    ports:
-      - 8000:8000
+ mycomposer:
+ image: myimage:mytag
+ ports:
+ - 8000:8000
 ```
 
 #### Dependencies
 
 Often, we need to create a dependency chain between our services, so that some services get loaded before (and unloaded after) other ones. We can achieve this result through the depends_on keyword:
-```version: '3'
+```
+version: '3'
 services:
-  mycomposer:
-    image: myimage:mytag
-    depends_on:
-      - myothercontainer
+ mycomposer:
+ image: myimage:mytag
+ depends_on:
+ - myothercontainer
 ```
 
-We should be aware, however, that Compose will not wait for the zookeeper service to finish loading before starting the kafka service: it will simply wait for it to start.
+We should be aware, however, that Compose will not wait for the myothercontainer service to finish loading before starting the mycomposer service: it will simply wait for it to start. We will cover this in a later scenario.
 
 #### Environment Variables
 
-Working with environment variables is easy in Compose. We can define static environment variables, and also define dynamic variables with the ${} notation:
-```version: '3'
+Working with environment variables is easy with Docker Compose. We can define static environment variables, and also define dynamic variables with the ${} notation:
+```
+version: '3'
 services:
-  mycomposer:
-    image: myimage:mytag
-    environment:
-      DB: mydb
-      USER: "${USER}"
+ mycomposer:
+ image: myimage:mytag
+ environment:
+ MYENV1: Hellow
+ MYENV2: "${USER}"
 ```
 
 There are different methods to provide those values to Compose.
 
-For example, one is setting them in a .env file in the same directory, structured like a .properties file, key=value:
+One is setting them in a .env file in the same directory with a key=value structure:
 ```
-POSTGRES_VERSION=alpine
-USER=foo
+MYENV1=Hello
+MYENV2=World
 ```
 
-Otherwise, we can set them in the OS before calling the command:
+Or, we can set them in the OS before calling the command:
 ```
-export POSTGRES_VERSION=alpine
-export USER=foo
+export MYENV1=Hello
+export MYENV2=Again
 docker-compose up
 ```
-We can mix the approaches, but let's keep in mind that Compose uses the following priority order, overwriting the less important with the higher ones:
+
+YOu can mix and match the methods, but keep in mind the following priority order, overwriting the less important with the higher ones:
 * Compose file
 * Shell environment variables
 * Environment file
@@ -155,19 +157,19 @@ We can mix the approaches, but let's keep in mind that Compose uses the followin
 
 #### Starting Up
 
-We've seen that we can create and start the containers, the networks, and the volumes defined in the configuration with up:
+Starting a compose file is as easy as:
 `docker-compose up`
 
-After the first time, however, we can simply use start to start the services:
+Once the container has been built, you can simply use start instead:
 `docker-compose start`
 
-Compose can also run in the background as a daemon when launched with the -d option:
+You can also run containers in the background as a daemon using the -d flag:
 `docker-compose up -d`
 
 #### Shutting Down
 
-To safely stop the active services, we can use stop, which will preserve containers, volumes, and networks, along with every modification made to them:
+Stopping the active services will preserve containers, volumes, and networks, along with every modification made to them:
 `docker-compose stop`
 
-To reset the status of our project, instead, we simply run down, which will destroy everything with only the exception of external volumes:
+To stop and remove everything except external volumes:
 `docker-compose down`
