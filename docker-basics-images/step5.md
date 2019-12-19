@@ -66,13 +66,7 @@ services:
 
 * A named volume is similar to an anonymous volume. Docker manages where on disk the volume is created, but you give it a volume name. To create a named volume:
 ```
-services:
- mycomposer:
- volumes:
- - somevolumename:/path/on/host
-
-volumes:
- somevolumename: 
+1111
 ```
 
 Anonymous volumes are rarely used nowadays, named volumes are the recommended way to go. However, host volumes also allow us to specify an existing folder in the host. We can also mount volumes in read-only mode by appending `:ro` to the rule.
@@ -148,7 +142,7 @@ export MYENV2=Again
 docker-compose up
 ```
 
-YOu can mix and match the methods, but keep in mind the following priority order, overwriting the less important with the higher ones:
+You can mix and match the methods, but keep in mind the following priority order, overwriting the less important with the higher ones:
 * Compose file
 * Shell environment variables
 * Environment file
