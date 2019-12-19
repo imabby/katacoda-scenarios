@@ -65,6 +65,7 @@ services:
 ```
 
 * A named volume is similar to an anonymous volume. Docker manages where on disk the volume is created, but you give it a volume name. To create a named volume:
+
 ```
 services:
   mycomposer:
@@ -75,13 +76,11 @@ volumes:
   somevolumename: 
 ```
 
-While anonymous volumes were useful with older versions of Docker (pre 1.9), named ones are the suggested way to go nowadays. Host volumes also allow us to specify an existing folder in the host.
-
-We can mount a volume in read-only mode by appending :ro to the rule, like for the /home folder (we don't want a Docker container erasing our users by mistake).
+Anonymous volumes are rarely used nowadays, named volumes are the recommneded way to go. However, host volumes also allow us to specify an existing folder in the host. We can also mount volumes in read-only mode by appending :ro to the rule.
 
 #### Building an Image
 
-If we have a Dockerfile, we may need to build the image first before runing the container.
+If we have a Dockerfile, we can build the image first before runing the container.
 We can do this using the build keyword:
 ```
 services: 
