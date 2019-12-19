@@ -27,7 +27,7 @@ If all goes well, this should start the image in a new container and print the f
 ```
 
 Using the link below you should be able to view the webpage:<br>
-Render port 8000: https://[[HOST_SUBDOMAIN]]-8000-[[KATACODA_HOST]].environments.katacoda.com/
+https://[[HOST_SUBDOMAIN]]-8000-[[KATACODA_HOST]].environments.katacoda.com/
 
 When you're ready press <kbd>Ctrl</kbd>+<kbd>C</kbd>, this will stop the container.
 

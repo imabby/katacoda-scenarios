@@ -46,17 +46,17 @@ If the image does not exist, Compose attempts to pull it, unless you have also s
 Since we are running a web application, we will need to expose port 8000 for us to view the web page.
 To do this we simple list the ports we want to expose and bind them to a local port. Similar to what we did previously in our `docker run` command. 
 
-Add the following to bind port 8000 on the host to port 8000 of our local machine:
+Add the following to bind port 8001 on our local machine to port 8000 of the host:
 <pre class="file" data-filename="docker-compose.yml" data-target="append">    ports:
-      - 8000:8000</pre>
+      - 8001:8000</pre>
+
+We are using port 8001 here because we still have our previous container running binding port 8000. If we try to run another container on this port will get an error. Try it if you dont believe me!!
 
 #### Running Docker Compose
 
 Once the docker-compose file has been written we can now run it with the command: `docker-compose up`{{execute}}
 
-If the command completed successfully, we should be able to see the new image with the docker command: `docker images`{{execute}}
-
 Using the link below you should be able to view the webpage:<br>
-Render port 8000: https://[[HOST_SUBDOMAIN]]-8000-[[KATACODA_HOST]].environments.katacoda.com/
+https://[[HOST_SUBDOMAIN]]-8001-[[KATACODA_HOST]].environments.katacoda.com/
 
 When you're ready press <kbd>Ctrl</kbd>+<kbd>C</kbd>, this will stop the container.

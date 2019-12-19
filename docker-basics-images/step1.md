@@ -43,12 +43,3 @@ https://docs.docker.com/engine/reference/commandline/ps/
 Remove one or more containers
 
 https://docs.docker.com/engine/reference/commandline/rm/
-
-#### Inspecting Objects
-
-`docker inspect NAME|ID`
-
-Docker inspect provides detailed information on constructs controlled by Docker.
-By default, docker inspect will render results in a JSON array.
-
-https://docs.docker.com/engine/reference/commandline/inspect/

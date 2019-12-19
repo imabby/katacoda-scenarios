@@ -14,7 +14,7 @@ A docker-compose.yml looks like this:
 version: '3'
 services:
   myservice
-    image:myimage:latest
+    image:myimage:mytag
     ports:
       ...
     volumes:
@@ -32,25 +32,19 @@ See https://docs.docker.com/compose/compose-file/ for more information
 
 #### Services
 
-First of all, services refer to containers' configuration.
+Services refer to a containers' configuration.
 
-In the case of our Python web app we ran the following command:
-`docker run -p 8000:8000 -d --name mycontainer myimage:mytag`
-
-In docker compose this would translate to:
+For example, for our Python web app we would only have the one service in the configuration:
 ```
-version: '3'
+version: "3"
 services:
-  mycomposer:
-    container_name: mycontainer
-    image: myimage:mytag
-    ports:
-      - 8000:8000
+  myservice:
+    ...
 ```
 
 #### Volumes
 
-Volumes are physical areas of disk space shared between the host and a container, or even between containers. In other words, a volume is a shared directory in the host, visible from some or all containers.
+Volumes are used to share disk space between the host and a container, or even between containers. In other words, a volume is a shared directory in the host, visible from some or all containers.
 
 There are three types of volumes: anonymous, named, and host ones. Docker manages both anonymous and named volumes, automatically mounting them in self-generated directories in the host. 
 
@@ -72,9 +66,9 @@ services:
 
 * A named volume is similar to an anonymous volume. Docker manages where on disk the volume is created, but you give it a volume name. To create a named volume:
 ```
-services: 
+services:
   mycomposer:
-    volumes: 
+    volumes:
       - somevolumename:/path/on/host
 
 volumes:
