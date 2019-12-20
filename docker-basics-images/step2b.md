@@ -9,9 +9,9 @@ Create a new Dockerfile via the CLI: `touch Dockerfile`{{execute}}
 
 Next, open the Dockerifle in the editor: `Dockerfile`{{open}}
 
-Most Dockerfiles will usually start with a base image (for example, ubuntu, centos). You can create a base image from scratch but with so many images available you shouldn't need to. Check out [Docker Hub](https://hub.docker.com/) to see available images.
+Most Dockerfiles will usually start with a base image (for example, ubuntu, centos). A base image is the image that is used to create all of your container images. Your base image can be an official Docker image, such as Centos, or you can modify an official Docker image to suit your needs, or you can create your own base image from scratch. With so many images available you shouldn't need to create your own. Check out [Docker Hub](https://hub.docker.com/) to see available images.
 
-We will add a base image to our `Dockerfile` using the `FROM` instruction, followed by the image name.
+As we are building a Python app we will add the Python base image to our `Dockerfile` using the `FROM` instruction, followed by the image name.
 <pre class="file" data-filename="Dockerfile" data-target="append">FROM python:3-alpine
 </pre>
 
