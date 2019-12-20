@@ -8,6 +8,7 @@ Next, open the Dockerifle in the editor: `docker-compose.yml`{{open}}
 
 A docker-compose file must contain the `version` and `services` keywords as a minimum. So lets add those in now:
 <pre class="file" data-filename="docker-compose.yml" data-target="append">version: '3'
+
 services:</pre>
 
 #### Create a service
@@ -60,3 +61,47 @@ Using the link below you should be able to view the webpage:<br>
 https://[[HOST_SUBDOMAIN]]-8001-[[KATACODA_HOST]].environments.katacoda.com/
 
 When you're ready press <kbd>Ctrl</kbd>+<kbd>C</kbd>, this will stop the container.
+
+#### Running the services in detached mode
+
+We sometimes need to run our services in the background. We can do this by using the `-d` flag.
+This will cause the services to start in the background and leave them running.
+
+Lets run our compose file in detached mode: `docker-compose -d up`{{execute}}
+
+Again, using the link below you should be able to view the webpage:<br>
+https://[[HOST_SUBDOMAIN]]-8001-[[KATACODA_HOST]].environments.katacoda.com/
+
+*Note: Even though we've used docker-compose to run the services, we can still interact with the containers as we have done in previous steps.
+For example, you can still exec into the container using `docker exec -ti mycompose /bin/sh`.*
+
+#### Viewing the status of our services
+
+Running `docker ps`{{execute}} will show that our service is running and is binding port 8001 to port 8000. However, this will also show all of our running containers.
+
+If we just want to view the status of our services within our docker-compose file we can run: `docker-compose ps`{{execute}}
+
+This will only list the services in our docker-compose file.
+
+#### Stopping services
+
+To stop services running in the foreground, you just have to press Ctrl-C as shown above.
+
+However, to stop services running in the background, use: `docker-compose stop`{{execute}}
+
+This command will stop all your containers, but it won't remove them. They can be started again with `docker-compose start`
+
+You can also stop a specific service bypassing the service name to the stop command: `docker-compose stop mycomposer`
+
+#### Stopping and removing services
+
+Now we've finished with the service we want to remove them. Run: `docker-compose down`{{execute}}
+
+Running the `down` command stops and removes any containers, networks, volumes, or images created by up.
+
+By default, the only things removed are:
+* Containers for services defined in the Compose file
+* Networks defined in the networks section of the Compose file
+* The default network, if one is used
+
+Networks and volumes defined as external are never removed.

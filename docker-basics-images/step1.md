@@ -1,5 +1,5 @@
 
-Below are some basic commands that you will need to be aware of as they are used throughout the scenarios.
+Below are some basic commands that you may need to be aware of as they are used throughout the scenarios.
 I've included links to the corresponding docker documentation.
 
 #### Listing Images
@@ -17,16 +17,6 @@ The docker images command takes an optional [REPOSITORY[:TAG]] argument that res
 
 https://docs.docker.com/engine/reference/commandline/images/
 
-#### Removing Images
-
-`docker rmi IMAGE`
-
-Removes (and un-tags) one or more images from the host node. If an image has multiple tags, using this command with the tag as a parameter only removes the tag. If the tag is the only one for the image, both the image and the tag are removed.
-
-This does not remove images from a registry. You cannot remove an image of a running container unless you use the -f option. To see all images on a host use the `docker image ls` command.
-
-https://docs.docker.com/engine/reference/commandline/rmi/
-
 #### Listing Containers
 
 `docker ps`{{execute}}
@@ -35,11 +25,3 @@ Lists all **running** containers. If you want to see all the containers, use the
 `docker ps -a`{{execute}}
 
 https://docs.docker.com/engine/reference/commandline/ps/
-
-#### Removing Containers
-
-`docker rm CONTAINER `
-
-Remove one or more containers
-
-https://docs.docker.com/engine/reference/commandline/rm/
