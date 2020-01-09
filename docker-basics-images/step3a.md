@@ -1,4 +1,8 @@
-A container is an instance of an image. We can create, run, stop, or delete a container using the Docker CLI. We can connect a container to more than one networks, or even create a new image based on its current state.
+#### Short Overview
+A Docker container is sort of like a Virtual Machine. You can run a container, stop a container andrestart a container.
+
+#### Long Overview
+A Docker container is an instance of an image. We can create, run, stop, or delete a container using the Docker CLI. We can connect a container to more than one networks, or even create a new image based on its current state.
 
 Since images are read-only, Docker adds a read-write file system over the read-only file system of the image to create a container. 
 
